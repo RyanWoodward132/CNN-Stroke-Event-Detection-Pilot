@@ -51,3 +51,10 @@ e15$V4 = e15$V4 + 38.42
   # They are now synced, we can now remove duplicate events
 e05 = e05[-c(6:10),]
 e15 = e15[-c(1,2),]
+  # Repeat this process for all other event df
+
+  # e15 - e25
+  # From the videos we can see that e15[27] and e25[1] are the same event
+e25$V4 = e25$V4 - 48.98
+e15 = e15[-c(27:32), ]
+e25 = e25[-c(71:81), ]
