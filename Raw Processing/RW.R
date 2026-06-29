@@ -2,10 +2,6 @@
 # This file contains the R code used to process the RAW accelerometer data of RW
 # This file contains the R code used to process the Event data of RW
 
-### AccelAnalysisV2.R
-### Exploratory Data Analysis for accelerometer data and events
-### Building dataframe for use with model
-
 #+ Load Libraries
 library(readr)
 library(lubridate)
@@ -23,8 +19,8 @@ e35 = read.csv("Data/Raw/Temp/Events/RW_35.csv", header = F)
 e45 = read.csv("Data/Raw/Temp/Events/RW_45.csv", header = F)
 
 #+ Convert acc$Time to elapsed time in seconds from first timestamp
-acc$Time <- dmy_hms(acc$Time)
-acc$Time <- round(as.numeric(difftime(acc$Time, acc$Time[1], units = "secs")), 2)
+acc$Time = dmy_hms(acc$Time)
+acc$Time = round(as.numeric(difftime(acc$Time, acc$Time[1], units = "secs")), 2)
 
 #+ Export acc to Data/Raw/Accel
 write.csv(acc, file = "Data/Raw/Accel/RW.csv")
