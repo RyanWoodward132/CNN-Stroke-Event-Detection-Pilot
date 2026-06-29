@@ -2,7 +2,15 @@
 This repository contains the working code for the pilot experiments of [CNN-Stroke-Event-Detection](https://github.com/RyanWoodward132/CNN-Stroke-Event-Detection).
 
 ## Overview
-The goal of this project is to detect individual swimming stroke events from inertial sensor data using a Convolutional Neural Network (CNN). This pilot uses 3-axis accelerometer data only. The full experiment will extend this to a 9-axis IMU by adding 3-axis gyroscopic and 3-axis magnetometer data.
+The goal of this project is to build a Convolutional Neural Network (CNN) that predicts four stroke events in elite level freestyle (Entry, Catch, Pull, Push). This pilot experiment will use 3-axis accelerometer data and derived features. The full experiment wil extend this to also include gyroscopic and magnetometer data as well. 
+
+## Status
+| Stage | Status |
+|---|---|
+| Data collection | Complete |
+| Data processing | In progress |
+| Model building and training | Pending |
+| Model evaluation | Pending |
 
 ## Methods
 Participants wore a sensor on their upper back (between the shoulder blades) while swimming. The accelerometer recorded movement along three axes — Vertical, Lateral, and Sagittal — at 100 Hz. Stroke events were manually labelled by reviewing synchronised video recordings and exported as timestamped event files.
@@ -44,13 +52,7 @@ Data/
 
 > **Note:** The data used here measures only 3-axis accelerometer data. The full experiment will also record 3-axis gyroscopic and 3-axis magnetometer data.
 
-## Status
-| Stage | Status |
-|---|---|
-| Data collection | Complete |
-| Raw data processing | In progress |
-| Model training | Pending |
-| Evaluation | Pending |
+
 
 ## Dependencies
 The processing scripts are written in R. The following packages are required:
