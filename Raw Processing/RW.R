@@ -29,12 +29,21 @@ acc$Time <- round(as.numeric(difftime(acc$Time, acc$Time[1], units = "secs")), 2
 #+ Export acc to Data/Raw/Accel
 write.csv(acc, file = "Data/Raw/Accel/RW.csv")
 
-#+ Remove [0x0 double] and coerce V4 to numeric
+#+ Remove [0x0 double] and sync and coerce V4 to numeric
 e05 = e05[e05$V1 != "[0x0 double]", ]
 e15 = e15[e15$V1 != "[0x0 double]", ]
 e25 = e25[e25$V1 != "[0x0 double]", ]
 e35 = e35[e35$V1 != "[0x0 double]", ]
 e45 = e45[e45$V1 != "[0x0 double]", ]
+
+#Save Start point before removing
+start = e05$V4[e05$V2 == "Start"]
+
+e05 = e05[e05$V1 != "Sync",]
+e15 = e15[e15$V1 != "Sync",]
+e25 = e25[e25$V1 != "Sync",]
+e35 = e35[e35$V1 != "Sync",]
+e45 = e45[e45$V1 != "Sync",]
 
 e05$V4 = as.numeric(e05$V4)
 e15$V4 = as.numeric(e15$V4)
